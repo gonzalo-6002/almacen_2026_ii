@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Models\Almacen; 
 use Illuminate\Http\Request;
 
@@ -40,5 +41,66 @@ class ProductosController extends Controller
 
         // 3. Regresa al formulario automáticamente y actualiza la tabla de la derecha
         return redirect()->route('productos.create')->with('success', '¡Guardado con éxito!');
+=======
+use Illuminate\Http\Request;
+use App\Models\Producto;
+class ProductosController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $productos = Producto::paginate(10);
+        return view('productos.index', compact('productos'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        //
+>>>>>>> cd009214ada4c14d6b74b3fc9f1b7f235d6a0cf2
     }
 }
